@@ -48,6 +48,8 @@ public class MakeLevel : MonoBehaviour
             }
         }
 
+        ImportCurrentLevel();
+
     }
 
     private void OnEnable()
@@ -199,7 +201,7 @@ public class MakeLevel : MonoBehaviour
 
         blocks[r, c].SetTile(tile, true);
         //Debug.Log(blocks[r, c] != null);
-        Debug.Log($"color at {r}, {c}: " + blocks[r, c].TheTile.GetColor());
+        //Debug.Log($"color at {r}, {c}: " + blocks[r, c].TheTile.GetColor());
     }
 
     private void DoDeleteAt(int c, int r)
@@ -214,7 +216,7 @@ public class MakeLevel : MonoBehaviour
 
         // destroy tile GameObject and clear slot
         Destroy(slot.TheTile.gameObject);
-        Debug.Log($"Deleted tile at [{r}, {c}]");
+        //Debug.Log($"Deleted tile at [{r}, {c}]");
     }
 
     private Vector2 GetCellPosition()

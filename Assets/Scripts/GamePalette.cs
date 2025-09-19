@@ -2,20 +2,6 @@ using UnityEngine;
 
 public class GamePalette : MonoBehaviour 
 { 
-    public enum BlockColor
-    {
-        Grey,
-        White,
-        Black, 
-        Red,
-        Orange,
-        Yellow,
-        Green, 
-        Cyan,
-        Blue,
-        Pink,
-        Reds
-    }
     public static GamePalette Instance { get; private set; }
 
     [SerializeField]
@@ -51,4 +37,19 @@ public class GamePalette : MonoBehaviour
     }
 
     public int Length => palette.Length;
+}
+
+public enum BlockColor
+{
+    Grey,
+    White,
+    Black,
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    Cyan,
+    Blue,
+    Pink,
+    Reds
 }

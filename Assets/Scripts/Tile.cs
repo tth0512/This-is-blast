@@ -28,7 +28,7 @@ public class Tile : MonoBehaviour
     {
         isMoving = false;
         this.colorID = colorID;
-        var color = (GamePalette.BlockColor)colorID;
+        var color = (BlockColor)colorID;
         sprite.sprite = GamePalette.Instance.GetSprite(color);
         gameObject.SetActive(true);
         SetScale(scaleSize);

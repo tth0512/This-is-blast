@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     private Canvas uiCanvas;
     private Camera worldCamera;
 
-    public GamePalette.BlockColor gunColor;
+    public BlockColor gunColor;
     private Board board;
 
     [SerializeField] private Transform gunSlots;
@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
         foreach (var block in canDestroyBlock)
         {
             if (block.TheTile.isShooting) continue;
-            var blockColor = (GamePalette.BlockColor)block.TheTile.GetColor();
+            var blockColor = (BlockColor)block.TheTile.GetColor();
             if (blockColor == gunColor)
             {
                 // Shoot animation
