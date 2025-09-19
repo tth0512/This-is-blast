@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393322129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d53e179687f872c4c97145e649272617, type: 3}
   m_Name: 
@@ -2385,14 +2385,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393322129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94050e982e1a2b04396995ed71173d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevel: 
   cellTransform: {fileID: 1078518545}
   cellPrefab: {fileID: -5281190565165831947, guid: af1883933e65ed94a9b544b5ee8fbc00, type: 3}
   inputManager: {fileID: 666219476}
+  currentColor: 5
+  placeInterval: 0.12
+  deleteInterval: 0.12
 --- !u!1 &1439655095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +2767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3136e9ebed9a88942be80650a0497057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropdown: {fileID: 0}
+  makeLevel: {fileID: 0}
 --- !u!224 &1688452912 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 484001413821731113, guid: c60b82c783b9214428e9ddd0e8fd9813, type: 3}

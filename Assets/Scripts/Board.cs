@@ -34,6 +34,12 @@ public class Board : MonoBehaviour
         //    PopTiles();
         //    currentTime = Time.time;
         //}
+
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            var data = LevelManager.LoadLevelFromFile("level_0_test");
+            ImportLevel(data);
+        }
     }
 
     public List<Slot> GetFirstRow()
@@ -136,5 +142,29 @@ public class Board : MonoBehaviour
         return new Vector2(col * cellSize, row * cellSize);
     }
 
+    public void ImportLevel(LevelData data)
+    {
+        if (data == null) return;
+
+        // clear cũ
+        for (int r = 0; r < Size; r++)
+            for (int c = 0; c < Size; c++)
+                if (blocks[r, c].TheTile != null)
+                {
+                    Destroy(blocks[r, c].TheTile.gameObject);
+                    blocks[r, c].Clear();
+                }
+
+        // load mới
+        foreach (var te in data.tiles)
+        {
+            if (te.color < 0) continue;
+
+            var tile = Instantiate(cellPrefab, cellTransform);
+            tile.Init(te.color);
+            tile.SetPosition(GetCellWorldPos(te.col, te.row));
+            blocks[te.row, te.col].SetTile(tile, false);
+        }
+    }
 
 }
